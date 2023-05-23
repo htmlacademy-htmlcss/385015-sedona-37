@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
-* Студент: [Александр Дорошенко](https://up.htmlacademy.ru/htmlcss/37/user/385015).
-* Наставник: `Неизвестно`.
+- Студент: [Александр Дорошенко](https://up.htmlacademy.ru/htmlcss/37/user/385015).
+- Наставник: [Дина Шарипова](https://htmlacademy.ru/profile/id1418957).
 
 ---
 
