@@ -9,7 +9,7 @@
   <body>
     <header class="main-header">
       <a class="main-header-logo" href="https://htmlacademy.ru/">
-        <img src="#" alt="Логотип сайта" width="140" height="70">
+        <img src="./images/logo-main.svg" alt="Логотип сайта" width="140" height="70">
       </a>
 
       <nav class="main-nav">
@@ -46,10 +46,12 @@
 
     <main class="main-inner">
       <div class="wrapper-top">
+        <!-- декоративное изображение во весь контейнер. Фон -->
         <h1 class="main-inner-header">Гостиницы Седоны</h1>
 
         <ol class="breadcrumbs">
           <li>
+            <!-- Декоративное изображение. правый паддинг + фон (исключение: последний li) -->
             <a href="index.html">
               <span class="visually-hidden">Главная</span>
             </a>
@@ -152,17 +154,20 @@
           <ul class="view-list">
             <li class="view-item">
               <a class="btn-view view-tile" href="#">
+                <!-- Декоративное изображение. Фон -->
                 <span class="visually-hidden">Показать плиткой</span>
               </a>
             </li>
             <li class="view-item">
               <a class="btn-view view-card" href="#">
+                <!-- Декоративное изображение. Фон -->
                 <span class="visually-hidden">Показать карточками</span>
               </a>
             </li>
             <li class="view-item">
               <a class="btn-view view-list" href="#">
-                <span class="visually-hidden">Показать список</span>
+                <!-- Декоративное изображение. Фон -->
+                <span class="visually-hidden">Показать списком</span>
               </a>
             </li>
           </ul>
@@ -171,9 +176,10 @@
         <ul class="offers-list">
           <li class="offers-item">
             <article class="offer">
-              <h3 class="offer-title">Amara Resort & Spa</h3>
-              <img class="offer-img" src="#" alt="Фото скального грота с видом на звёздное небо" width="300"
-                height="212">
+              <a href="#">
+                <h3 class="offer-title">Amara Resort & Spa</h3>
+                <img class="offer-img" src="./images/hotels/hotel-1.jpg" alt="Фото скального грота с видом на звёздное небо" width="300" height="212">
+              </a>
               <p>
                 <span>Гостиница</span>
                 <span>От 4000 ₽</span>
@@ -191,11 +197,10 @@
               <!-- реализация - в элементы с классом "star-fill" будет вставка фоном изображения -->
               <div class="rating-wrapper">
                 <p class="rating-stars">
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star"></i>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
                 </p>
 
                 <p class="rating-count">Рейтинг: <span>8,5</span></p>
@@ -205,9 +210,10 @@
           </li>
           <li class="offers-item">
             <article class="offer">
-              <h3 class="offer-title">Villas at Poco Diablo</h3>
-              <img class="offer-img" src="#" alt="Вид на скальную гряду на фоне восхода солнца" width="300"
-                height="212">
+              <a href="#">
+                <h3 class="offer-title">Villas at Poco Diablo</h3>
+                <img class="offer-img" src="./images/hotels/hotel-2.jpg" alt="Вид на скальную гряду на фоне восхода солнца" width="300" height="212">
+              </a>
               <p>
                 <span>Гостиница</span>
                 <span>От 5000 ₽</span>
@@ -220,11 +226,10 @@
               </p>
               <div class="rating-wrapper">
                 <p class="rating-stars">
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star"></i>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
                 </p>
 
                 <p class="rating-count">Рейтинг: <span>9,2</span></p>
@@ -234,9 +239,10 @@
           </li>
           <li class="offers-item">
             <article class="offer">
-              <h3 class="offer-title">Desert Quail Inn</h3>
-              <img class="offer-img" src="#" alt="Высочайшая точка местной достопримечательности, каньона Ок-Крик"
-                width="300" height="212">
+              <a href="#">
+                <h3 class="offer-title">Desert Quail Inn</h3>
+                <img class="offer-img" src="./images/hotels/hotel-3.jpg" alt="Высочайшая точка местной достопримечательности, каньона Ок-Крик" width="300" height="212">
+              </a>
               <p>
                 <span>Гостиница</span>
                 <span>От 2500 ₽</span>
@@ -249,11 +255,9 @@
               </p>
               <div class="rating-wrapper">
                 <p class="rating-stars">
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star"></i>
-                  <i class="star"></i>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
                 </p>
 
                 <p class="rating-count">Рейтинг: <span>6,9</span></p>
@@ -263,8 +267,10 @@
           </li>
           <li class="offers-item">
             <article class="offer">
-              <h3 class="offer-title">GreenTree Inn</h3>
-              <img class="offer-img" src="#" alt="Ночной вид на Государственный парк Ред-Рок" width="300" height="212">
+              <a href="#">
+                <h3 class="offer-title">GreenTree Inn</h3>
+                <img class="offer-img" src="./images/hotels/hotel-4.jpg" alt="Ночной вид на Государственный парк Ред-Рок" width="300" height="212">
+              </a>
               <p>
                 <span>Гостиница</span>
                 <span>От 1500 ₽</span>
@@ -277,11 +283,8 @@
               </p>
               <div class="rating-wrapper">
                 <p class="rating-stars">
-                  <i class="star star-fill"></i>
-                  <i class="star star-fill"></i>
-                  <i class="star"></i>
-                  <i class="star"></i>
-                  <i class="star"></i>
+                  <span class="star star-fill"></span>
+                  <span class="star star-fill"></span>
                 </p>
 
                 <p class="rating-count">Рейтинг: <span>5,0</span></p>
@@ -304,18 +307,13 @@
           <li class="pagination-item">
             <a class="pagination-link" href="#">4</a>
           </li>
-          <li class="pagination-item pagination-empty">
-            <!-- вот здесь я даже не знаю. По идее изпользовать спан "не косистентно",
-              но и вставлять вот такую "непонятную" ссылку...
-              Я решил, что всё таки так правильнее -->
-            <span>...</span>
+          <li class="pagination-item">
+            <a class="pagination-empty" href="#">...</a>
           </li>
           <li class="pagination-item">
             <a class="pagination-link" href="#">10</a>
           </li>
         </ul>
-
-        </footer>
       </section>
 
     </main>
@@ -360,7 +358,7 @@
 
         <div class="copyright">
           <a href="https://htmlacademy.ru/">
-            <img src="#" alt="Логотип htmlacademy" width="115" height="33">
+            <img src="./images/logo-htmlacademy.svg" alt="Логотип htmlacademy" width="115" height="33">
           </a>
         </div>
       </section>
