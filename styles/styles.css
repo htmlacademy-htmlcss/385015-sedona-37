@@ -1,0 +1,269 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: bold;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+}
+
+body {
+  width: 1200px;
+  margin: 0;
+  padding: 0;
+
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: #756157;
+}
+
+.section-button {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.button-submit {
+  background-color: #82B3D3;;
+}
+
+.button-reset {
+  background-color: transparent;
+}
+
+.nav-item a:not(.button) {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.nav-favorites-count {
+  padding: 3px 4px;
+
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 400;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  background-color: #7DB54F;
+}
+
+.main-inner-header {
+  font-size: 60px;
+  line-height: 78px;
+  color: #ffffff;
+}
+
+.lead-title,
+.service-header,
+.order-header,
+.subscribe-header,
+.offers-count {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.advantages-item.fill,
+.subscribe-index,
+.side-wrapper * { /* можно так??? */
+  color: #ffffff;
+
+  background-color: #82B3D3;
+}
+
+.advantages-item,
+.service-item {
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.middle-item {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
+.advantages-title,
+.offer-title,
+.service-title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.advantages-title,
+.service-title {
+  text-transform: uppercase;
+}
+
+.advantages-subtitle,
+.service-subtitle,
+.offer-subtitle,
+.rating-count {
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.rating-count {
+  font-size: 16px;
+  line-height: 20px;
+
+  border-radius: 4px;
+
+  background-color: #F2F2F2;
+}
+
+.subscribe input {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #a9a9a9;
+
+  background-color: #F2F2F2;
+
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.subscribe button {
+  background-color: #82B3D3;
+  border-radius: 0 4px 4px 0;
+}
+
+.company-tel {
+  font-size: 40px;
+  line-height: 40px;
+  font-style: normal;
+  color: #000000;
+}
+
+.subscribe-index,
+.wrapper-top {
+  background-color: #5a7fa4;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.subscribe-index {
+  background-image: url("../images/bg-subscribe.jpg");
+}
+
+.wrapper-top {
+  text-align: start;
+  color: #ffffff;
+
+  background-image: url("../images/bg-filter.jpg");
+}
+
+.breadcrumbs-link {
+  font-size: 16px;
+  line-height: 21px;
+  color: #ffffff;
+}
+
+.filter-group {
+  border: none;
+}
+
+.filter-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+
+.filter-list {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.filter-cost {
+  color: #a9a9a9;
+}
+
+.control-field {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.sorting-select {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.pagination-link {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+  color: #ffffff;
+
+  background-color: #82B3D3;
+  border-radius: 4px;
+}
+
+.pagination-current {
+  color: #000000;
+
+  background-color: #F2F2F2;
+}
