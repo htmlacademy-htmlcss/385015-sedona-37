@@ -59,12 +59,12 @@ a {
 }
 
 .button {
-  font-family: inherit;
+  font-family: inherit; /* переопределяем встроенное правило для шрифта */
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #ffffff; /* переопределяем встроенное правило для цвета шрифта */
 
   border: none;
   border-radius: 4px;
@@ -94,8 +94,26 @@ a {
   color: #000000;
 }
 
+.nav-search,
+.nav-favorites {
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.nav-search {
+  background-image: url("../images/search.svg");
+}
+
+.nav-favorites {
+  background-image: url("../images/favorites.svg")
+}
+
 .nav-favorites-count {
-  padding: 3px 4px;
+  padding: 3px;
 
   font-size: 10px;
   line-height: 10px;
@@ -161,6 +179,37 @@ a {
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+}
+
+.favorite {
+  background-color: #82B3D3;
+}
+
+.favorite>input:checked+span {
+  background-color: #7DB54F;
+  border-radius: 4px;
+}
+
+.service-title::before {
+  display: flex;
+  content: "";
+  width: 76px;
+  height: 76px;
+  margin: 0 auto;
+
+  background-repeat: no-repeat;
+}
+
+.service-housing::before {
+  background-image: url("../images/offer-housing.svg");
+}
+
+.service-food::before {
+  background-image: url("../images/offer-food.svg");
+}
+
+.service-souvenirs::before {
+  background-image: url("../images/offer-souvenirs.svg");
 }
 
 .rating-count {
@@ -252,6 +301,26 @@ a {
   line-height: 21px;
 }
 
+.btn-view {
+  display: block;
+  width: 16px;
+  height: 14px;
+
+  background-repeat: no-repeat;
+}
+
+.view-tile {
+  background-image: url("../images/view-tile.svg");
+}
+
+.view-card {
+  background-image: url("../images/view-card.svg");
+}
+
+.view-listed {
+  background-image: url("../images/view-list.svg");
+}
+
 .pagination-link {
   font-weight: 700;
   font-size: 20px;
@@ -266,4 +335,29 @@ a {
   color: #000000;
 
   background-color: #F2F2F2;
+}
+
+.social-item a {
+  display: block;
+  height: 17px;
+
+  background-repeat: no-repeat;
+}
+
+.social-vk {
+  width: 24px;
+
+  background-image: url("../images/social-vk.svg");
+}
+
+.social-telegram {
+  width: 18px;
+
+  background-image: url("../images/social-telegram.svg");
+}
+
+.social-youtube {
+  width: 22px;
+
+  background-image: url("../images/social-youtube.svg");
 }

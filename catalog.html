@@ -27,14 +27,14 @@
           </li>
         </ul>
 
-        <ul class="nav-list">
-          <li class="nav-item nav-search">
-            <a href="#">
+        <ul class="user-list">
+          <li class="nav-item">
+            <a class="nav-search" href="#">
               <span class="visually-hidden">Поиск</span>
             </a>
           </li>
-          <li class="nav-item nav-favorites">
-            <a href="#">
+          <li class="nav-item">
+            <a class="nav-favorites" href="#">
               <span class="visually-hidden">Избранное</span>
               <span class="nav-favorites-count">12</span>
             </a>
@@ -48,7 +48,6 @@
 
     <main class="main-inner">
       <div class="wrapper-top">
-        <!-- декоративное изображение во весь контейнер. Фон -->
         <h1 class="main-inner-header">Гостиницы Седоны</h1>
 
         <ol class="breadcrumbs">
@@ -117,7 +116,6 @@
               <legend class="filter-title">Стоимость, ₽:</legend>
               <ul class="filter-list">
                 <li class="filter-item filter-cost">
-                  <!-- надписи "от/до" будут добавляться псевдоэлементами. Честно говоря, я больше ничего не придумал -->
                   <label for="cost-min"><span class="visually-hidden">Стоимость </span>от</label>
                   <input class="control-field" id="cost-min" type="number" name="cost-min" value="0">
                 </li>
@@ -167,8 +165,7 @@
               </a>
             </li>
             <li class="view-item">
-              <a class="btn-view view-list" href="#">
-                <!-- Декоративное изображение. Фон -->
+              <a class="btn-view view-listed" href="#">
                 <span class="visually-hidden">Показать списком</span>
               </a>
             </li>
@@ -180,7 +177,8 @@
             <article class="offer">
               <a href="#">
                 <h3 class="offer-title">Amara Resort & Spa</h3>
-                <img class="offer-img" src="./images/hotels/hotel-1.jpg" alt="Фото скального грота с видом на звёздное небо" width="300" height="212">
+                <img class="offer-img" src="./images/hotels/hotel-1.jpg"
+                  alt="Фото скального грота с видом на звёздное небо" width="300" height="212">
               </a>
               <p class="offer-subtitle">
                 <span>Гостиница</span>
@@ -188,14 +186,13 @@
               </p>
               <p>
                 <a class="button" href="#">Подробнее</a>
-                <label class="button">
+                <label class="button favorite">
                   <!-- чекбокс выбран из соображений отработки состояний.
                     Поменялось состояние => поменялись цвет и надпись -->
-                  <input class="visually-hidden" type="checkbox">В избранное
+                  <input class="visually-hidden" type="checkbox">
+                  <span>В избранное</span>
                 </label>
               </p>
-              <!-- рейтинг должен только показываться т.е. не должен быть
-                интерактивным, поэтому контролы я не использовал -->
               <!-- реализация - в элементы с классом "star-fill" будет вставка фоном изображения -->
               <div class="rating-wrapper">
                 <p class="rating-stars">
@@ -214,7 +211,8 @@
             <article class="offer">
               <a href="#">
                 <h3 class="offer-title">Villas at Poco Diablo</h3>
-                <img class="offer-img" src="./images/hotels/hotel-2.jpg" alt="Вид на скальную гряду на фоне восхода солнца" width="300" height="212">
+                <img class="offer-img" src="./images/hotels/hotel-2.jpg"
+                  alt="Вид на скальную гряду на фоне восхода солнца" width="300" height="212">
               </a>
               <p class="offer-subtitle">
                 <span>Гостиница</span>
@@ -222,8 +220,9 @@
               </p>
               <p>
                 <a class="button" href="#">Подробнее</a>
-                <label class="button">
-                  <input class="visually-hidden" type="checkbox" checked>В избранном
+                <label class="button favorite">
+                  <input class="visually-hidden" type="checkbox" checked>
+                  <span>В избранном</span>
                 </label>
               </p>
               <div class="rating-wrapper">
@@ -243,7 +242,8 @@
             <article class="offer">
               <a href="#">
                 <h3 class="offer-title">Desert Quail Inn</h3>
-                <img class="offer-img" src="./images/hotels/hotel-3.jpg" alt="Высочайшая точка местной достопримечательности, каньона Ок-Крик" width="300" height="212">
+                <img class="offer-img" src="./images/hotels/hotel-3.jpg"
+                  alt="Высочайшая точка местной достопримечательности, каньона Ок-Крик" width="300" height="212">
               </a>
               <p class="offer-subtitle">
                 <span>Гостиница</span>
@@ -251,8 +251,9 @@
               </p>
               <p>
                 <a class="button" href="#">Подробнее</a>
-                <label class="button">
-                  <input class="visually-hidden" type="checkbox">В избранное
+                <label class="button favorite">
+                  <input class="visually-hidden" type="checkbox">
+                  <span>В избранное</span>
                 </label>
               </p>
               <div class="rating-wrapper">
@@ -271,7 +272,8 @@
             <article class="offer">
               <a href="#">
                 <h3 class="offer-title">GreenTree Inn</h3>
-                <img class="offer-img" src="./images/hotels/hotel-4.jpg" alt="Ночной вид на Государственный парк Ред-Рок" width="300" height="212">
+                <img class="offer-img" src="./images/hotels/hotel-4.jpg"
+                  alt="Ночной вид на Государственный парк Ред-Рок" width="300" height="212">
               </a>
               <p class="offer-subtitle">
                 <span>Гостиница</span>
@@ -279,8 +281,9 @@
               </p>
               <p>
                 <a class="button" href="#">Подробнее</a>
-                <label class="button">
-                  <input class="visually-hidden" type="checkbox">В избранное
+                <label class="button favorite">
+                  <input class="visually-hidden" type="checkbox">
+                  <span>В избранное</span>
                 </label>
               </p>
               <div class="rating-wrapper">
@@ -337,18 +340,18 @@
         <h2 class="visually-hidden">Контакты</h2>
 
         <ul class="social-list">
-          <li class="social-tem social-vk">
-            <a href="https://vk.com/htmlacademy">
+          <li class="social-item">
+            <a class="social-vk" href="https://vk.com/htmlacademy">
               <span class="visually-hidden">В контакте</span>
             </a>
           </li>
-          <li class="social-tem social-telegram">
-            <a href="https://t.me/htmlacademy">
+          <li class="social-item">
+            <a class="social-telegram" href="https://t.me/htmlacademy">
               <span class="visually-hidden">Телеграмм</span>
             </a>
           </li>
-          <li class="social-tem social-youtube">
-            <a href="https://www.youtube.com/user/htmlacademyru">
+          <li class="social-item">
+            <a class="social-youtube" href="https://www.youtube.com/user/htmlacademyru">
               <span class="visually-hidden">Ютуб</span>
             </a>
           </li>
