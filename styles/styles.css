@@ -15,6 +15,7 @@
 }
 
 html {
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -36,7 +37,7 @@ html {
 }
 
 body {
-  width: 1200px;
+  height: 100%;
   margin: 0;
   padding: 0;
 
@@ -46,7 +47,7 @@ body {
   text-align: center;
   color: #000000;
 
-  background-color: #ffffff;
+  background-color: #E6E6E6;
 }
 
 img {
@@ -70,6 +71,24 @@ a {
   border-radius: 4px;
 
   background-color: #756157;
+
+  cursor: pointer;
+}
+
+.page-container {
+  width: 1200px;
+  margin: 0 auto;
+
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.page-main {
+  flex-grow: 1;
 }
 
 .section-button {
@@ -142,16 +161,8 @@ a {
   text-transform: uppercase;
 }
 
-.advantages-item.fill,
-.subscribe-index,
-.side-wrapper * { /* можно так??? */
-  color: #ffffff;
-
-  background-color: #82B3D3;
-}
-
 .advantages-item,
-.service-item {
+.service-item:not(:nth-child(2)) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
@@ -179,6 +190,14 @@ a {
   font-size: 18px;
   line-height: 21px;
   color: #333333;
+}
+
+.advantages-item.fill,
+.subscribe-index,
+.text-bg { /* можно так??? */
+  color: #ffffff;
+
+  background-color: #82B3D3;
 }
 
 .favorite {
@@ -342,22 +361,4 @@ a {
   height: 17px;
 
   background-repeat: no-repeat;
-}
-
-.social-vk {
-  width: 24px;
-
-  background-image: url("../images/social-vk.svg");
-}
-
-.social-telegram {
-  width: 18px;
-
-  background-image: url("../images/social-telegram.svg");
-}
-
-.social-youtube {
-  width: 22px;
-
-  background-image: url("../images/social-youtube.svg");
 }
