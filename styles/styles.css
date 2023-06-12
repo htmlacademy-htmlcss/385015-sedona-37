@@ -390,13 +390,17 @@ a {
 
 .social-item a {
   height: 17px;
-
+  color: #83B3D3;
   background-repeat: no-repeat;
 }
 
 .footer-phone {
   margin-left: auto;
   margin-right: 236px;
+}
+
+.copyright a {
+  color: #000000;
 }
 
 .wrapper-top {
