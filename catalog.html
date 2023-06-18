@@ -16,7 +16,7 @@
         </a>
 
         <nav class="main-nav">
-          <ul class="nav-list">
+          <ul class="nav-list list-standard">
             <li class="nav-item">
               <a href="index.html">Главная</a>
             </li>
@@ -28,7 +28,7 @@
             </li>
           </ul>
 
-          <ul class="user-list">
+          <ul class="user-list list-standard">
             <li class="nav-item">
               <a class="nav-search" href="#">
                 <span class="visually-hidden">Поиск</span>
@@ -51,14 +51,13 @@
         <div class="wrapper-top">
           <h1 class="main-inner-header">Гостиницы Седоны</h1>
 
-          <ol class="breadcrumbs">
-            <li>
-              <!-- Декоративное изображение. правый паддинг + фон (исключение: последний li) -->
-              <a class="breadcrumbs-link" href="index.html">
+          <ol class="breadcrumbs list-standard">
+            <li class="breadcrumbs-item">
+              <a class="breadcrumbs-link main-page-link" href="index.html">
                 <span class="visually-hidden">Главная</span>
               </a>
             </li>
-            <li>
+            <li class="breadcrumbs-item">
               <a class="breadcrumbs-link" href="#">
                 <span>Гостиницы</span>
               </a>
@@ -72,7 +71,7 @@
               <fieldset class="filter-group">
                 <legend class="filter-title">Инфраструктура:</legend>
 
-                <ul class="filter-list">
+                <ul class="filter-list list-standard">
                   <li class="filter-item">
                     <label class="control">
                       <input class="control-input" type="checkbox" name="pool" checked> Бассейн
@@ -94,7 +93,7 @@
               <fieldset class="filter-group">
                 <legend class="filter-title">Тип жилья:</legend>
 
-                <ul class="filter-list">
+                <ul class="filter-list list-standard">
                   <li class="filter-item">
                     <label class="control">
                       <input class="control-input" type="radio" name="type-housing" value="hotel" checked>Гостиница
@@ -115,7 +114,7 @@
 
               <fieldset class="filter-group cost-wrapper">
                 <legend class="filter-title">Стоимость, ₽:</legend>
-                <ul class="filter-list">
+                <ul class="filter-list filter-list-cost list-standard">
                   <li class="filter-item filter-cost">
                     <label for="cost-min"><span class="visually-hidden">Стоимость </span>от</label>
                     <input class="control-field" id="cost-min" type="number" name="cost-min" value="0">
@@ -153,16 +152,14 @@
               <option value="popular">Сначала популярные</option>
             </select>
 
-            <ul class="view-list">
+            <ul class="view-list list-standard">
               <li class="view-item ">
                 <a class="btn-view view-tile view-current" href="#">
-                  <!-- Декоративное изображение. Фон -->
                   <span class="visually-hidden">Показать плиткой</span>
                 </a>
               </li>
               <li class="view-item">
                 <a class="btn-view view-card" href="#">
-                  <!-- Декоративное изображение. Фон -->
                   <span class="visually-hidden">Показать карточками</span>
                 </a>
               </li>
@@ -174,7 +171,7 @@
             </ul>
           </header>
 
-          <ul class="offers-list">
+          <ul class="offers-list list-standard">
             <li class="offers-item">
               <article class="offer">
                 <a href="#">
@@ -269,7 +266,7 @@
             </li>
           </ul>
 
-          <ul class="pagination">
+          <ul class="pagination list-standard">
             <li class="pagination-item">
               <a class="pagination-link pagination-current" href="#">1</a>
             </li>
@@ -309,7 +306,7 @@
         <section class="contacts">
           <h2 class="visually-hidden">Контакты</h2>
 
-          <ul class="social-list">
+          <ul class="social-list list-standard">
             <li class="social-item">
               <a class="social-vk" href="https://vk.com/htmlacademy" aria-label="Ссылка на группу Вконтакте">
                 <svg role="img" width="25" height="15" viewBox="0 0 25 15" fill="none">
