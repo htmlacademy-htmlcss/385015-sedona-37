@@ -107,7 +107,8 @@ a {
 }
 
 .section-button {
-  width: 376px;
+  padding-left: 50px;
+  padding-right: 50px;
 
   font-size: 20px;
   line-height: 36px;
@@ -243,14 +244,20 @@ a {
   min-width: 160px;
 }
 
+/* ранее это было сделано через позиционирование - блок надписи над блоком фона.
+Но такой вариант не гибок: поменялся контент => поменялись размеры => надо менять центровку */
 .intro {
-  position: relative;
+  display: grid;
+}
+
+.intro-bg,
+.intro-title {
+  grid-area: 1/1/-1/-1;
 }
 
 .intro-title {
-  position: absolute;
-  left: calc(1200px - 229px - 50%);
-  top: 51px;
+  padding-top: 51px;
+  justify-self: center;
 }
 
 .advantages .padding-wrapper {
@@ -278,7 +285,7 @@ a {
 
 .service .padding-wrapper {
   padding-top: 64px;
-  padding-bo: 64px;
+  padding-bottom: 64px;
 }
 
 .lead-title,
@@ -314,11 +321,19 @@ a {
   margin-bottom: 20px;
 }
 
-.advantages-list,
-.service-list,
 .social-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.advantages-list,
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.advantages-list {
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .advantages-item,
@@ -328,13 +343,16 @@ a {
 
 .advantages-item:not(:first-child, :last-child),
 .side-wrapper {
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 385px;
   padding: 85px;
 }
 
 .fill {
+  grid-column: 1/-1;
   display: flex;
-  width: 100%;
 }
 
 .fill-reverse {
@@ -394,7 +412,8 @@ a {
 }
 
 .service-item {
-  width: 400px;
+  /* width: 400px; */
+  min-height: 385px;
   padding: 81px;
 }
 
@@ -415,6 +434,7 @@ a {
   margin: 0 auto 30px;
 
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .service-housing::before {
@@ -455,6 +475,10 @@ a {
 }
 
 .rating-count {
+  width: 140px;
+  min-height: 37px;
+  padding: 8px 15px;
+
   font-size: 16px;
   line-height: 20px;
 
@@ -508,7 +532,9 @@ a {
 }
 
 .subscribe-form input{
-  width: 458px;
+  width: 452px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .contacts {
@@ -744,34 +770,62 @@ a {
 .offers-list {
   padding-bottom: 40px;
   margin-bottom: 40px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
   gap: 20px;
 
   border-bottom: 1px solid #E6E6E6;
 }
 
 .offer {
-  width: 340px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
+  height: 100%;
+  /* display: flex; */
+  display: grid;
+  grid-template-rows: auto 21px 37px 37px; /* фиксирую всё кроме первого блока (h3 + img) т.к. текст в кнопках меняться будет вряд-ли, а вот текст в заголовках меняться будет */
+  gap: 16px;
+  /* flex-direction: column; */
+  /* align-items: start; */
 
   border: 1px solid #E6E6E6;
   border-radius: 4px;
 }
 
+.offer a {
+  display: grid;
+}
+
 .offer-title {
+  margin: 0;
+  /* margin-bottom: 16px; */
+
   text-align: left;
+  grid-row: 2/3;
+}
+
+.offer-img {
+  margin-bottom: 16px;
+  object-fit: contain;
+  height: 212px; /* фиксация высоты изображения т.е. она постоянна */
 }
 
 .offer > p,
 .rating-wrapper {
-  width: 100%;
-  display: flex;
+  margin: 0;
+  /* width: 100%; */
+  display: flex; /* стуктура разметки (абзацы "подзаголовка", "обёртки кнопок", "обёртки рейтинга") не очень подходит для гридов */
   justify-content: space-between;
+  align-items: center;
 }
+
+.rating-wrapper p {
+  margin: 0;
+}
+
+/* .offer > p {
+  margin-bottom: 16px;
+} */
 
 .rating-stars {
   width: 0;
