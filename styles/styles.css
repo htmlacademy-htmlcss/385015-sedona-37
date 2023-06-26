@@ -412,7 +412,6 @@ a {
 }
 
 .service-item {
-  /* width: 400px; */
   min-height: 385px;
   padding: 81px;
 }
@@ -772,7 +771,6 @@ a {
   margin-bottom: 40px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   gap: 20px;
 
   border-bottom: 1px solid #E6E6E6;
@@ -781,12 +779,9 @@ a {
 .offer {
   padding: 20px;
   height: 100%;
-  /* display: flex; */
   display: grid;
   grid-template-rows: auto 21px 37px 37px; /* фиксирую всё кроме первого блока (h3 + img) т.к. текст в кнопках меняться будет вряд-ли, а вот текст в заголовках меняться будет */
   gap: 16px;
-  /* flex-direction: column; */
-  /* align-items: start; */
 
   border: 1px solid #E6E6E6;
   border-radius: 4px;
@@ -798,7 +793,6 @@ a {
 
 .offer-title {
   margin: 0;
-  /* margin-bottom: 16px; */
 
   text-align: left;
   grid-row: 2/3;
@@ -813,7 +807,6 @@ a {
 .offer > p,
 .rating-wrapper {
   margin: 0;
-  /* width: 100%; */
   display: flex; /* стуктура разметки (абзацы "подзаголовка", "обёртки кнопок", "обёртки рейтинга") не очень подходит для гридов */
   justify-content: space-between;
   align-items: center;
@@ -822,10 +815,6 @@ a {
 .rating-wrapper p {
   margin: 0;
 }
-
-/* .offer > p {
-  margin-bottom: 16px;
-} */
 
 .rating-stars {
   width: 0;
