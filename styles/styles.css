@@ -102,7 +102,6 @@ a {
 }
 
 .page-main {
-  margin-top: -5px;
   flex-grow: 1;
 }
 
@@ -115,6 +114,7 @@ a {
 }
 
 .button-submit {
+  width: 191px;
   margin-bottom: 32px;
 
   background-color: #82B3D3;
@@ -155,8 +155,8 @@ a {
 
 .nav-favorites-count {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 0px;
 
   padding: 5px 4.5px;
 
@@ -178,6 +178,7 @@ a {
 
 .main-header-logo {
   margin-right: 30px;
+  margin-bottom: -5px;
   z-index: 10;
 }
 
@@ -191,6 +192,7 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  z-index: 10;
 }
 
 .nav-list,
@@ -237,7 +239,9 @@ a {
 
 .nav-search,
 .nav-favorites {
-  margin: 12px;
+  display: block;
+  padding: 20px;
+  height: 100%;
 }
 
 .order-btn {
@@ -248,6 +252,13 @@ a {
 Но такой вариант не гибок: поменялся контент => поменялись размеры => надо менять центровку */
 .intro {
   display: grid;
+}
+
+.intro-bg {
+  width: 1200px;
+  height: 485px;
+  object-fit: contain;
+  background-color: #82B3D3;
 }
 
 .intro-bg,
@@ -347,12 +358,19 @@ a {
   flex-direction: column;
   justify-content: center;
   min-height: 385px;
+  width: 400px;
   padding: 85px;
 }
 
 .fill {
   grid-column: 1/-1;
   display: flex;
+}
+
+.fill img {
+  width: 800px;
+  height: 385px;
+  object-fit: contain;
 }
 
 .fill-reverse {
@@ -465,7 +483,13 @@ a {
   margin-bottom: 54px;
 }
 
-.favorite {
+.btn-more,
+.btn-favorite {
+  padding: 8px;
+  width: 140px;
+}
+
+.btn-favorite {
   background-color: #82B3D3;
 }
 
@@ -523,6 +547,8 @@ a {
 
 .subscribe-index {
   background-image: url("../images/bg-subscribe.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .subscribe-form {
@@ -574,10 +600,13 @@ a {
   color: #ffffff;
 
   background-image: url("../images/bg-filter.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
@@ -604,7 +633,7 @@ a {
   background-repeat: no-repeat;
 }
 
-.breadcrumbs-item:not(:last-child) .breadcrumbs-link::after {
+.breadcrumbs-item:not(:last-child)::after {
   display: block;
   content: "";
   width: 7px;
@@ -694,6 +723,7 @@ a {
 }
 
 .buttons-wrapper {
+  width: 191px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -780,7 +810,7 @@ a {
   padding: 20px;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 21px 37px 37px; /* фиксирую всё кроме первого блока (h3 + img) т.к. текст в кнопках меняться будет вряд-ли, а вот текст в заголовках меняться будет */
+  grid-template-rows: 1fr 21px auto 37px; /* переделал т.к. проверку на переполнение вёрстка не проходила */
   gap: 16px;
 
   border: 1px solid #E6E6E6;
