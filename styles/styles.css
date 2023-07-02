@@ -76,6 +76,17 @@ a {
   background-color: #756157;
 
   cursor: pointer;
+  outline: none;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #615048;
+}
+
+.button:disabled {
+  background-color: #E5E5E5;
+  color: #ffffff;
 }
 
 .page-container {
@@ -102,7 +113,6 @@ a {
 }
 
 .page-main {
-  margin-top: -5px;
   flex-grow: 1;
 }
 
@@ -115,12 +125,49 @@ a {
 }
 
 .button-submit {
+  width: 191px;
   margin-bottom: 32px;
 
   background-color: #82B3D3;
 }
 
+.button-submit:hover,
+.button-submit:focus {
+  background-color: #68A2CA;
+  outline: none;
+}
+
 .button-reset {
+  background-color: transparent;
+}
+
+.button-reset:hover,
+.button-reset:focus {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.button-reset:hover {
+  background-color: transparent;
+  outline: none;
+}
+
+.button-reset:focus-visible {
+  color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+  outline: 3px solid #83B3D3;
+  outline-offset: -3px;
+}
+
+.button-reset:focus {
+  background-color: transparent;
+}
+
+.button-reset:active {
+  outline: none;
+}
+
+.button-reset:disabled {
+  color: rgba(255, 255, 255, 0.2);
   background-color: transparent;
 }
 
@@ -155,8 +202,8 @@ a {
 
 .nav-favorites-count {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 12px;
+  right: 0;
 
   padding: 5px 4.5px;
 
@@ -178,7 +225,12 @@ a {
 
 .main-header-logo {
   margin-right: 30px;
+  margin-bottom: -5px;
   z-index: 10;
+}
+
+.main-header-logo:focus-visible {
+  outline-color: #82B3D3;
 }
 
 .main-header-logo img {
@@ -191,6 +243,7 @@ a {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  z-index: 10;
 }
 
 .nav-list,
@@ -208,8 +261,18 @@ a {
   padding: 20px 0;
 }
 
+.nav-list a:hover,
+.nav-list a:focus {
+  border-bottom: 2px solid #82B3D3;
+  outline: none;
+}
+
+.nav-list a:active {
+  color: rgba(117, 97, 87, 0.3);
+}
+
 .nav-item {
-  height: 64px;
+  height: 100%;
 }
 
 .nav-list .nav-item {
@@ -226,6 +289,31 @@ a {
   align-items: center;
 }
 
+.user-list a {
+  position: relative;
+}
+
+.user-list a:focus-visible {
+  outline: none;
+}
+
+.user-list a:not(.button):hover::before,
+.user-list a:not(.button):focus-visible::before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #82B3D3;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+}
+
+.user-list a:not(.button):active {
+  opacity: 0.3;
+}
+
 .user-list li {
   display: flex;
   align-items: center;
@@ -237,17 +325,24 @@ a {
 
 .nav-search,
 .nav-favorites {
-  margin: 12px;
+  display: block;
+  padding: 20px;
+  height: 100%;
 }
 
 .order-btn {
   min-width: 160px;
 }
 
-/* ранее это было сделано через позиционирование - блок надписи над блоком фона.
-Но такой вариант не гибок: поменялся контент => поменялись размеры => надо менять центровку */
 .intro {
   display: grid;
+}
+
+.intro-bg {
+  width: 1200px;
+  height: 485px;
+  object-fit: contain;
+  background-color: #82B3D3;
 }
 
 .intro-bg,
@@ -261,8 +356,8 @@ a {
 }
 
 .advantages .padding-wrapper {
-  padding: 69px; /* смысл в том, чтобы "воздух" был непосредственно - у элемента */
-  margin-bottom: 21px; /* а остальное - через нижний отступ. то же самое - у блоков ниже */
+  padding: 69px;
+  margin-bottom: 21px;
 }
 
 .lead-title,
@@ -347,12 +442,19 @@ a {
   flex-direction: column;
   justify-content: center;
   min-height: 385px;
+  width: 400px;
   padding: 85px;
 }
 
 .fill {
   grid-column: 1/-1;
   display: flex;
+}
+
+.fill img {
+  width: 800px;
+  height: 385px;
+  object-fit: contain;
 }
 
 .fill-reverse {
@@ -465,12 +567,29 @@ a {
   margin-bottom: 54px;
 }
 
-.favorite {
+.btn-more,
+.btn-favorite {
+  padding: 8px;
+  width: 140px;
+}
+
+.btn-favorite {
   background-color: #82B3D3;
+}
+
+.btn-favorite:hover,
+.btn-favorite:focus {
+  background-color: #68A2CA;
+  outline: none;
 }
 
 .favorite-check {
   background-color: #7DB54F;
+}
+
+.favorite-check:hover,
+.favorite-check:focus {
+  background-color: #6C9E42;
 }
 
 .rating-count {
@@ -507,11 +626,28 @@ a {
   border-radius: 0 4px 4px 0;
 }
 
+.subscribe button:hover,
+.subscribe button:focus {
+  background-color: #68A2CA;
+  outline: none;
+}
+
 .company-tel {
   font-size: 40px;
   line-height: 40px;
   font-style: normal;
   color: #000000;
+}
+
+.company-tel:hover,
+.company-tel:focus {
+  color: #756157;
+  outline: none;
+}
+
+.company-tel:active {
+  color: rgba(117, 97, 87, 0.3);
+  outline: none;
 }
 
 .subscribe-index,
@@ -523,6 +659,8 @@ a {
 
 .subscribe-index {
   background-image: url("../images/bg-subscribe.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .subscribe-form {
@@ -534,6 +672,20 @@ a {
   width: 452px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.subscribe-form input:hover {
+  background-color: #E6E6E6;
+}
+
+.subscribe-form input:focus {
+  outline: 3px solid #83B3D3; /* опять же, по макету обводка таких полей - снаружи */
+  /* outline-offset: -3px; */
+}
+
+.subscribe-form input:not(:placeholder-shown) {
+  outline: 2px solid #000000;
+  /* outline-offset: -2px; */
 }
 
 .contacts {
@@ -556,6 +708,17 @@ a {
   background-repeat: no-repeat;
 }
 
+.social-item a:hover,
+.social-item a:focus {
+  color: #68A2CA;
+  outline: none;
+}
+
+.social-item a:active {
+  color: rgba(104, 162, 202, 0.3);
+  outline: none;
+}
+
 .footer-phone {
   margin-left: auto;
   margin-right: 236px;
@@ -563,6 +726,17 @@ a {
 
 .copyright a {
   color: #000000;
+}
+
+.copyright a:hover,
+.copyright a:focus {
+  color: #756157;
+  outline: none;
+}
+
+.copyright a:active {
+  color: rgba(117, 97, 87, 0.3);
+  outline: none;
 }
 
 .wrapper-top {
@@ -574,10 +748,13 @@ a {
   color: #ffffff;
 
   background-image: url("../images/bg-filter.jpg");
+  background-position: center center;
+  background-size: cover;
 }
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
@@ -595,6 +772,18 @@ a {
   color: #ffffff;
 }
 
+.breadcrumbs-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumbs-link:focus-visible {
+  outline: none; /* фокус стилизован также, как состояние покоя. Не понятно, зачем это сделано. Где-то плачет a11y Т_Т */
+}
+
+.breadcrumbs-link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .breadcrumbs-item .main-page-link::before {
   display: block;
   content: "";
@@ -604,7 +793,7 @@ a {
   background-repeat: no-repeat;
 }
 
-.breadcrumbs-item:not(:last-child) .breadcrumbs-link::after {
+.breadcrumbs-item:not(:last-child)::after {
   display: block;
   content: "";
   width: 7px;
@@ -684,6 +873,31 @@ a {
   border: none;
 }
 
+/* по макету стрелок нет */
+.control-field::-webkit-outer-spin-button,
+.control-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.control-field::placeholder {
+  color: #000000;
+}
+
+.control-field:not(:placeholder-shown) {
+  outline: 2px solid #000000;
+  /* outline-offset: -2px; */ /* по макету обводка снаружи, хотя изнутри было бы аккуратнее и красивее */
+}
+
+.control-field:hover {
+  background-color: #E6E6E6;
+}
+
+.control-field:focus-visible {
+  outline: 3px solid #83B3D3;
+  /* outline-offset: -3px; */ /* по макету обводка снаружи, хотя изнутри было бы аккуратнее и красивее */
+}
+
 .filter-cost:first-child input {
   margin-right: 2px;
   border-radius: 4px 0 0 4px;
@@ -694,6 +908,7 @@ a {
 }
 
 .buttons-wrapper {
+  width: 191px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -714,7 +929,7 @@ a {
 .sorting-select {
   width: 292px;
   height: 49px;
-  padding: 14px 20px;
+  padding: 10px 20px;
   margin-left: auto;
   margin-right: 70px;
   position: relative;
@@ -728,6 +943,17 @@ a {
   cursor: pointer;
 }
 
+.sorting-select:hover,
+.sorting-select:focus-visible {
+  border-color: #68A2CA;
+  outline-color: #68A2CA;
+}
+
+.sorting-select:disabled {
+  border-color: rgb(0, 0, 0, 0.3);
+  cursor: unset;
+}
+
 .btn-view {
   display: flex;
   width: 48px;
@@ -738,6 +964,16 @@ a {
   border-radius: 4px;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.btn-view:active,
+.btn-view:hover {
+  border-color: #000000;
+}
+
+.btn-view:focus-visible {
+  border-color: #68A2CA;
+  outline: none;
 }
 
 .view-current {
@@ -780,7 +1016,7 @@ a {
   padding: 20px;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 21px 37px 37px; /* фиксирую всё кроме первого блока (h3 + img) т.к. текст в кнопках меняться будет вряд-ли, а вот текст в заголовках меняться будет */
+  grid-template-rows: 1fr 21px auto 37px; /* переделал т.к. проверку на переполнение вёрстка не проходила */
   gap: 16px;
 
   border: 1px solid #E6E6E6;
@@ -789,6 +1025,10 @@ a {
 
 .offer a {
   display: grid;
+}
+
+.offer a:NOT(.btn-more):focus-visible {
+  outline: 2px solid #82B3D3;
 }
 
 .offer-title {
@@ -871,6 +1111,16 @@ a {
   border-radius: 4px;
 }
 
+.pagination-link:not(.pagination-current):hover,
+.pagination-link:not(.pagination-current):focus {
+  background-color: #68A2CA;
+  outline: none;
+}
+
+.pagination-link:not(.pagination-current):active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .pagination-current {
   color: #000000;
 
@@ -879,4 +1129,13 @@ a {
 
 .pagination-empty {
   color: #000000;
+}
+
+.pagination-current,
+.pagination-empty {
+  cursor: unset;
+}
+
+.button:active {
+  color: rgba(255, 255, 200, 0.3);
 }

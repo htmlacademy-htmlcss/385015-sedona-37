@@ -117,11 +117,11 @@
                 <ul class="filter-list filter-list-cost list-standard">
                   <li class="filter-item filter-cost">
                     <label for="cost-min"><span class="visually-hidden">Стоимость </span>от</label>
-                    <input class="control-field" id="cost-min" type="number" name="cost-min" value="0">
+                    <input class="control-field" id="cost-min" type="number" name="cost-min" placeholder="0">
                   </li>
                   <li class="filter-item filter-cost">
                     <label for="cost-max"><span class="visually-hidden">Стоимость </span>до</label>
-                    <input class="control-field" id="cost-max" type="number" name="cost-max" value="9000">
+                    <input class="control-field" id="cost-max" type="number" name="cost-max" placeholder="9000">
                   </li>
                 </ul>
                 <!-- range-контролы будут только влиять на инпуты выше (и наоборот - при изменении) -->
@@ -184,8 +184,8 @@
                   <span>От 4000 ₽</span>
                 </p>
                 <p>
-                  <a class="button" href="#">Подробнее</a>
-                  <button class="button favorite">В избранное</button>
+                  <a class="button btn-more" href="#">Подробнее</a>
+                  <button class="button btn-favorite">В избранное</button>
                 </p>
                 <div class="rating-wrapper">
                   <p class="rating-stars rating-4"></p>
@@ -207,8 +207,8 @@
                   <span>От 5000 ₽</span>
                 </p>
                 <p>
-                  <a class="button" href="#">Подробнее</a>
-                  <button class="button favorite favorite-check">В избранном</button>
+                  <a class="button btn-more" href="#">Подробнее</a>
+                  <button class="button btn-favorite favorite-check">В избранном</button>
                 </p>
                 <div class="rating-wrapper">
                   <p class="rating-stars rating-4"></p>
@@ -230,8 +230,8 @@
                   <span>От 2500 ₽</span>
                 </p>
                 <p>
-                  <a class="button" href="#">Подробнее</a>
-                  <button class="button favorite">В избранное</button>
+                  <a class="button btn-more" href="#">Подробнее</a>
+                  <button class="button btn-favorite">В избранное</button>
                 </p>
                 <div class="rating-wrapper">
                   <p class="rating-stars rating-3"></p>
@@ -253,8 +253,8 @@
                   <span>От 1500 ₽</span>
                 </p>
                 <p>
-                  <a class="button" href="#">Подробнее</a>
-                  <button class="button favorite">В избранное</button>
+                  <a class="button btn-more" href="#">Подробнее</a>
+                  <button class="button btn-favorite">В избранное</button>
                 </p>
                 <div class="rating-wrapper">
                   <p class="rating-stars  rating-2"></p>
@@ -268,7 +268,7 @@
 
           <ul class="pagination list-standard">
             <li class="pagination-item">
-              <a class="pagination-link pagination-current" href="#">1</a>
+              <a class="pagination-link pagination-current" href="#" tabindex="-1">1</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">2</a>
@@ -280,7 +280,7 @@
               <a class="pagination-link" href="#">4</a>
             </li>
             <li class="pagination-item">
-              <a class="pagination-empty" href="#">...</a>
+              <a class="pagination-empty" href="#" tabindex="-1">...</a>
             </li>
             <li class="pagination-item">
               <a class="pagination-link" href="#">10</a>
