@@ -114,24 +114,30 @@
 
               <fieldset class="filter-group cost-wrapper">
                 <legend class="filter-title">Стоимость, ₽:</legend>
-                <ul class="filter-list filter-list-cost list-standard">
-                  <li class="filter-item filter-cost">
-                    <label for="cost-min"><span class="visually-hidden">Стоимость </span>от</label>
-                    <input class="control-field" id="cost-min" type="number" name="cost-min" placeholder="0">
-                  </li>
-                  <li class="filter-item filter-cost">
-                    <label for="cost-max"><span class="visually-hidden">Стоимость </span>до</label>
-                    <input class="control-field" id="cost-max" type="number" name="cost-max" placeholder="9000">
-                  </li>
-                </ul>
-                <!-- range-контролы будут только влиять на инпуты выше (и наоборот - при изменении) -->
-                <!-- значения, при отправке на сервер, берутся именно из инпутов выше -->
-                <p class="filter-slider">
-                  <input class="filter-slider-pin" id="slider-min" step="500" type="range" min="0" max="12000"
-                    value="0">
-                  <input class="filter-slider-pin" id="slider-max" step="500" type="range" min="0" max="12000"
-                    value="9000">
-                </p>
+                <div class="range-cost">
+                  <ul class="filter-list filter-list-cost list-standard">
+                    <li class="filter-item filter-cost">
+                      <label for="cost-min"><span class="visually-hidden">Стоимость </span>от</label>
+                      <input class="control-field" id="cost-min" type="number" name="cost-min" min="0" max="1000000"
+                        placeholder="0">
+                    </li>
+                    <li class="filter-item filter-cost">
+                      <label for="cost-max"><span class="visually-hidden">Стоимость </span>до</label>
+                      <input class="control-field" id="cost-max" type="number" name="cost-max" min="0" max="1000000"
+                        placeholder="9000">
+                    </li>
+                  </ul>
+                  <div class="filter-slider">
+                    <div class="slider-bar" style="left: 0; width: 226px">
+                      <button class="slider-toggle toggle-min">
+                        <span class="visually-hidden">Изменить минимальную цену.</span>
+                      </button>
+                      <button class="slider-toggle toggle-max">
+                        <span class="visually-hidden">Изменить максимальную цену.</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </fieldset>
 
               <div class="buttons-wrapper">

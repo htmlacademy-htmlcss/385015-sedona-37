@@ -833,10 +833,6 @@ a {
   line-height: 23px;
 }
 
-.filter-list-cost {
-  display: flex;
-}
-
 .filter-item {
   position: relative;
 }
@@ -855,8 +851,53 @@ a {
   color: #a9a9a9;
 }
 
-.filter-slider {
+.filter-list-cost {
+  display: flex;
+  margin-bottom: 46px;
+}
+
+.filter-list-cost li:first-of-type {
   margin: 0;
+}
+
+.filter-slider {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slider-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.slider-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider-toggle:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.slider-toggle:active {
+  outline: 2px solid #83B3D3;
+}
+
+.toggle-min {
+  top: -8px;
+  left: 0;
+}
+
+.toggle-max {
+  top: -8px;
+  right: 0;
 }
 
 .control-field {
