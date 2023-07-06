@@ -833,12 +833,65 @@ a {
   line-height: 23px;
 }
 
-.filter-list-cost {
-  display: flex;
-}
-
 .filter-item {
   position: relative;
+}
+
+.control {
+  position: relative;
+  padding-left: 36px;
+}
+
+.control-mark {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  left: 0;
+  top: 2px;
+}
+
+.control:hover .control-mark {
+  opacity: 0.6;
+}
+
+/* как я понимаю, нужно было сделать ЭТО */
+.control:focus-within .control-mark {
+  outline: 3px solid #83B3D3;
+}
+
+.control-input:disabled + .control-mark {
+  opacity: 0.3;
+}
+
+.control-input[type="checkbox"] + .control-mark {
+  border-radius: 4px;
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  content: "";
+  width: 13px;
+  height: 10px;
+  background-image: url("../images/checkbox.svg");
+  background-repeat: no-repeat;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #3F5E72;
+  border-radius: 50%;
 }
 
 .filter-cost label {
@@ -855,11 +908,57 @@ a {
   color: #a9a9a9;
 }
 
-.filter-slider {
+.filter-list-cost {
+  display: flex;
+  margin-bottom: 46px;
+}
+
+.filter-list-cost li:first-of-type {
   margin: 0;
 }
 
-.control-field {
+.filter-slider {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slider-bar {
+  position: absolute;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+.slider-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider-toggle:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.slider-toggle:active {
+  outline: 2px solid #83B3D3;
+}
+
+.toggle-min {
+  top: -8px;
+  left: 0;
+}
+
+.toggle-max {
+  top: -8px;
+  right: 0;
+}
+
+.control-field,
+.search-form-field {
   width: 143px;
   padding: 12px 20px;
   padding-right: 45px;
@@ -874,8 +973,8 @@ a {
 }
 
 /* по макету стрелок нет */
-.control-field::-webkit-outer-spin-button,
-.control-field::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -1138,4 +1237,329 @@ a {
 
 .button:active {
   color: rgba(255, 255, 200, 0.3);
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 64px 70px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  width: 717px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 64px;
+  right: 52px;
+  width: 52px;
+  height: 52px;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close-button::before,
+.modal-close-button::after {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 2px;
+  background-color: #000000;
+  top: 24px;
+  left: 18px;
+}
+
+.modal-close-button::before {
+  transform: rotate(45deg);
+}
+.modal-close-button::after {
+  transform: rotate(-45deg);
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+  background-color: #E6E6E6;
+}
+
+.modal-close-button:focus-visible {
+  outline: 3px solid #83B3D3;
+}
+
+.modal-close-button:active::before,
+.modal-close-button:active::after {
+  background-color: #a1a1a1;
+}
+
+.modal-close-button:active {
+  outline: none;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 64px;
+}
+
+.search-form-field {
+  border-radius: 4px;
+}
+
+.date-error {
+  color: #FF5757;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.date-accept {
+  color: #333333;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.search-fields-date .field-group,
+.search-fields-guests .field-group {
+  display: grid;
+  grid-template-rows: 48px 20px 28px;
+  column-gap: 10px;
+  margin: 0;
+}
+
+.search-fields-date .field-group {
+  grid-template-columns: 125px 110px 68px 125px 110px;
+}
+
+.search-fields-guests .field-group {
+  grid-template-columns: 125px 110px;
+}
+
+.search-fields-guests {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-fields-date label,
+.search-fields-guests label {
+  grid-area: 1/1/2/2;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  align-self: center;
+  justify-self: start;
+}
+
+.search-fields-date input,
+.search-fields-guests input {
+  grid-area: 1/2/2/-1;
+}
+
+.search-fields-date input {
+  width: 440px;
+  padding: 12px 20px;
+}
+
+.search-fields-date input::-webkit-calendar-picker-indicator {
+  background-image: url("../images/calendar.svg");
+  opacity: 0.3;
+}
+
+.search-fields-guests input {
+  width: 110px;
+  padding: 14px 10px;
+  text-align: center;
+  height: 48px;
+  font-size: 18px;
+  line-height: 20;
+}
+
+.search-fields-date span {
+  grid-area: 2/2/3/-1;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.search-form-field:not(:placeholder-shown) {
+  outline: 3px solid #000000;
+  color: #000000;
+  background-color: #F2F2F2;
+}
+
+.search-form-field::placeholder,
+.search-form-field:hover,
+.search-form-field:focus {
+  color: rgb(0, 0, 0, 0.6);
+}
+
+.search-form-field:hover,
+.search-form-field:focus {
+  background-color: #E6E6E6;
+}
+
+.search-form-field:hover {
+  outline: none;
+}
+
+.input-wrapper:focus-within,
+.search-form-field:focus-visible {
+  outline: 3px solid #83B3D3;
+}
+
+.input-wrapper {
+  position: relative;
+  border-radius: 4px;
+}
+
+.input-wrapper button {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: none;
+  top: 14px;
+  cursor: pointer;
+}
+
+.input-wrapper button::before,
+.input-wrapper button::after {
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  top: 9px;
+  left: 3px;
+  background-color: #b1a7a2;
+  content: "";
+
+}
+
+.btn-guest-increase::after {
+  transform: rotate(90deg);
+}
+
+.btn-guest-reduce {
+  left: 10px;
+}
+
+.btn-guest-increase {
+  right: 10px;
+}
+
+.input-wrapper button:hover:before,
+.input-wrapper button:hover:after,
+.input-wrapper button:focus-visible:before,
+.input-wrapper button:focus-visible:after {
+  background-color: #000000;
+}
+
+.input-wrapper button:focus-visible {
+  outline: 3px solid #82B3D3;
+  border-radius: 4px;
+}
+
+.input-wrapper button:active:before,
+.input-wrapper button:active:after {
+  background-color: #cccccc;
+}
+
+.form-label-icon {
+  position: relative;
+  padding-right: 26px;
+  margin: auto 0;
+}
+
+.tooltip {
+  margin-top: 3px;
+  margin-left: 10px;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+}
+
+.tooltip-toggle {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.tooltip-icon {
+  width: 100%;
+  height: 100%;
+  color: #242424;
+  display: block;
+}
+
+.tooltip-text {
+  position: absolute;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 15px 18px 18px 22px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 256px;
+  z-index: 1;
+  margin-top: 15px;
+  text-align: left;
+  display: none;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.tooltip-toggle:focus {
+  outline: none;
+}
+
+.tooltip-text:after {
+  content:'';
+  background-image: url("../images/tooltip-arrow.svg");
+  width: 19px;
+  height: 9px;
+  position:absolute;
+  bottom: 100%;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-form-button {
+  display: block;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 10px;
+  background-color: #83B3D3;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.search-form-button:hover,
+.search-form-button:focus {
+  background-color: #68A2CA;
+}
+
+.search-form-button:active {
+  color: rgba(255, 255, 255, 0.3);
 }

@@ -18,7 +18,7 @@
         <nav class="main-nav">
           <ul class="nav-list list-standard">
             <li class="nav-item">
-              <a class="nav-link-current" href="#">Главная</a>
+              <a class="nav-link-current" href="./index.html">Главная</a>
             </li>
             <li class="nav-item">
               <a href="#">О седоне</a>
@@ -30,7 +30,7 @@
 
           <ul class="user-list list-standard">
             <li class="nav-item">
-              <a class="nav-search" href="./modal.html"> <!-- переход на окно с модалкой -->
+              <a class="nav-search" href="#">
                 <span class="visually-hidden">Поиск</span>
               </a>
             </li>
@@ -183,6 +183,68 @@
           </div>
         </section>
       </footer>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal modal-search">
+        <button class="modal-close-button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="search-fields-date">
+              <div class="field-group">
+                <label for="date-check-in">Дата заезда:</label>
+                <input class="search-form-field field" type="date" id="date-check-in" name="date-check-in">
+                <span class="date-error">Мы не можем отправить вас в прошлое.</span>
+              </div>
+              <div class="field-group">
+                <label for="date-check-out">Дата выезда:</label>
+                <input class="search-form-field field" type="date" id="date-check-out" name="date-check-out">
+                <span class="date-accept">На эти даты есть свободные номера. Пока есть.</span>
+              </div>
+            </div>
+            <div class="search-fields-guests">
+              <div class="field-group">
+                <label class="adults-label" for="adults">Взрослые:</label>
+                <div class="input-wrapper">
+                  <button class="btn-guest-reduce" type="button"><span class="visually-hidden">Уменьшить</span></button>
+                  <input class="search-form-field field adults-input" type="number" id="adults" name="adults"
+                    placeholder="1" value="2">
+                  <button class="btn-guest-increase" type="button"><span
+                      class="visually-hidden">Увеличить</span></button>
+                </div>
+              </div>
+              <div class="field-group">
+                <span class="form-label form-label-icon">
+                  <label class="children-label" for="children">Дети:</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                      <svg class="tooltip-icon" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                        <circle cx="13" cy="13" r="13" fill="#83B3D3" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7h2v2h-2V7Zm2 12h-2v-9h2v9Z" fill="#fff" />
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые
+                      будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                  </span>
+                </span>
+
+                <div class="input-wrapper">
+                  <button class="btn-guest-reduce" type="button"><span class="visually-hidden">Уменьшить</span></button>
+                  <input class="search-form-field field children-input" type="number" id="children" name="children"
+                    placeholder="1" value="2">
+                  <button class="btn-guest-increase" type="button"><span
+                      class="visually-hidden">Увеличить</span></button>
+                </div>
+              </div>
+            </div>
+
+            <button class="button search-form-button" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
     </div>
   </body>
 
