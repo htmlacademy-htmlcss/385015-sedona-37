@@ -203,7 +203,7 @@ a {
 .nav-favorites-count {
   position: absolute;
   top: 12px;
-  right: 0;
+  right: 4px;
 
   padding: 5px 4.5px;
 
@@ -253,7 +253,8 @@ a {
 }
 
 .nav-list {
-  width: 500px;
+  min-width: 500px;
+  margin-right: 50px;
 }
 
 .nav-list a {
@@ -271,9 +272,9 @@ a {
   color: rgba(117, 97, 87, 0.3);
 }
 
-.nav-item {
+/* .nav-item {
   height: 100%;
-}
+} */
 
 .nav-list .nav-item {
   margin: 0 16px;
@@ -284,7 +285,8 @@ a {
 }
 
 .user-list {
-  width: 300px;
+  min-width: 300px;
+  max-width: 410px;
   justify-content: end;
   align-items: center;
 }
@@ -321,12 +323,13 @@ a {
 
 .nav-order {
   margin-left: 20px;
+  width: 160px;
 }
 
 .nav-search,
 .nav-favorites {
   display: block;
-  padding: 20px;
+  padding: 22px;
   height: 100%;
 }
 
@@ -356,7 +359,7 @@ a {
 }
 
 .advantages .padding-wrapper {
-  padding: 69px;
+  padding: 68px;
   margin-bottom: 21px;
 }
 
@@ -404,7 +407,7 @@ a {
 }
 
 .subscribe-subheader {
-  margin-bottom: 54px;
+  margin-bottom: 56px;
 }
 
 .service-header,
@@ -515,7 +518,7 @@ a {
 
 .service-item {
   min-height: 385px;
-  padding: 81px;
+  padding: 77px;
 }
 
 .service-title,
@@ -552,6 +555,10 @@ a {
 
 .order {
   padding: 96px;
+}
+
+.order .section-button {
+  letter-spacing: -0.5px;
 }
 
 .order-header,
@@ -672,6 +679,7 @@ a {
   width: 452px;
   padding-left: 20px;
   padding-right: 20px;
+  letter-spacing: 0.8px;
 }
 
 .subscribe-form input:hover {
@@ -690,7 +698,7 @@ a {
 
 .contacts {
   display: flex;
-  padding: 45px 70px 35px;
+  padding: 46px 70px 35px;
   align-items: center;
 }
 
@@ -741,7 +749,7 @@ a {
 
 .wrapper-top {
   padding: 70px;
-  padding-top: 35px;
+  padding-top: 33px;
   margin-bottom: 50px;
 
   text-align: start;
@@ -810,13 +818,14 @@ a {
 .filter-group {
   padding: 0;
   margin: 0;
-  margin-right: 70px;
+  margin-right: 69px;
 
   border: none;
 }
 
 .cost-wrapper {
   margin-left: auto;
+  margin-right: 70px;
 }
 
 .filter-title {
@@ -910,7 +919,7 @@ a {
 
 .filter-list-cost {
   display: flex;
-  margin-bottom: 46px;
+  margin-bottom: 44px;
 }
 
 .filter-list-cost li:first-of-type {
@@ -1028,7 +1037,8 @@ input[type="number"]::-webkit-inner-spin-button {
 .sorting-select {
   width: 292px;
   height: 49px;
-  padding: 10px 20px;
+  padding: 10px 14px;
+  padding-right: 40px;
   margin-left: auto;
   margin-right: 70px;
   position: relative;
@@ -1102,17 +1112,17 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .offers-list {
-  padding-bottom: 40px;
-  margin-bottom: 40px;
+  padding-bottom: 37px;
+  margin-bottom: 41px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 19px;
 
   border-bottom: 1px solid #E6E6E6;
 }
 
 .offer {
-  padding: 20px;
+  padding: 19px;
   height: 100%;
   display: grid;
   grid-template-rows: 1fr 21px auto 37px; /* переделал т.к. проверку на переполнение вёрстка не проходила */
@@ -1138,7 +1148,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .offer-img {
-  margin-bottom: 16px;
+  margin-bottom: 17px;
   object-fit: contain;
   height: 212px; /* фиксация высоты изображения т.е. она постоянна */
 }
@@ -1153,6 +1163,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .rating-wrapper p {
   margin: 0;
+  text-transform: uppercase;
 }
 
 .rating-stars {
@@ -1261,13 +1272,16 @@ input[type="number"]::-webkit-inner-spin-button {
 .modal-close-button {
   position: absolute;
   padding: 0;
-  top: 64px;
-  right: 52px;
+  top: 65px;
+  right: 53px;
   width: 52px;
   height: 52px;
   background-color: #F2F2F2;
   border: none;
   border-radius: 50%;
+  /* background-image: url("../images/close-form.svg");
+  background-repeat: no-repeat;
+  background-position: center; */
   cursor: pointer;
 }
 
@@ -1322,16 +1336,22 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 4px;
 }
 
+/* .field-group {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+} */
+
 .date-error {
   color: #FF5757;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 29px;
 }
 
 .date-accept {
   color: #333333;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 29px;
 }
 
 .search-fields-date .field-group,
@@ -1363,6 +1383,12 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 700;
   align-self: center;
   justify-self: start;
+
+  text-transform: capitalize;
+}
+
+.form-label-icon {
+  text-align: left;
 }
 
 .search-fields-date input,
@@ -1373,16 +1399,20 @@ input[type="number"]::-webkit-inner-spin-button {
 .search-fields-date input {
   width: 440px;
   padding: 12px 20px;
+  padding-right: 50px;
+  position: relative;
 }
 
 .search-fields-date input::-webkit-calendar-picker-indicator {
   background-image: url("../images/calendar.svg");
   opacity: 0.3;
+  position: absolute;
+  right: 17px;
 }
 
 .search-fields-guests input {
   width: 110px;
-  padding: 14px 10px;
+  padding: 14px 35px;
   text-align: center;
   height: 48px;
   font-size: 18px;
@@ -1392,7 +1422,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .search-fields-date span {
   grid-area: 2/2/3/-1;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 23px;
 }
 
 .search-form-field:not(:placeholder-shown) {
@@ -1484,8 +1514,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .tooltip {
-  margin-top: 3px;
-  margin-left: 10px;
+  margin-top: 1px;
+  margin-left: 12px;
   position: absolute;
   width: 26px;
   height: 26px;
@@ -1512,7 +1542,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
-  padding: 15px 18px 18px 22px;
+  padding: 19px 18px 22px 24px;
   border-radius: 10px;
   left: 50%;
   transform: translateX(-50%);
