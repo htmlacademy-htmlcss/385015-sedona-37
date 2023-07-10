@@ -38,6 +38,7 @@ html {
 
 body {
   height: 100%;
+  min-width: 1280px;
   margin: 0;
   padding: 0;
 
@@ -184,7 +185,8 @@ a {
 .nav-favorites {
   display: block;
   min-width: 18px;
-  min-height: 18px;
+  min-height: inherit;
+  padding: 22px;
 
   background-repeat: no-repeat;
   background-position: center center;
@@ -197,13 +199,14 @@ a {
 .nav-favorites {
   position: relative;
 
-  background-image: url("../images/favorites.svg")
+  background-image: url("../images/favorites.svg");
 }
 
 .nav-favorites-count {
   position: absolute;
-  top: 2px;
-  right: 4px;
+  bottom: 33px;
+  left: 21px;
+  z-index: 2;
 
   padding: 5px 4.5px;
 
@@ -212,7 +215,7 @@ a {
   font-weight: 400;
   color: #ffffff;
 
-  border-radius: 50%;
+  border-radius: 10px;
 
   background-color: #7DB54F;
 }
@@ -253,13 +256,14 @@ a {
 }
 
 .nav-list {
-  min-width: 500px;
+  max-width: 500px;
   margin-right: 50px;
 }
 
 .nav-list a {
   display: block;
   padding: 20px 0;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-list a:hover,
@@ -272,15 +276,11 @@ a {
   color: rgba(117, 97, 87, 0.3);
 }
 
-/* .nav-item {
-  height: 100%;
-} */
-
 .nav-list .nav-item {
   margin: 0 16px;
 }
 
-.nav-link-current {
+.nav-list .nav-link-current {
   border-bottom: 2px solid #756257;
 }
 
@@ -309,7 +309,7 @@ a {
   background-color: #82B3D3;
   bottom: 0;
   left: 0;
-  z-index: 20;
+  z-index: 1;
 }
 
 .user-list a:not(.button):active {
@@ -319,6 +319,7 @@ a {
 .user-list li {
   display: flex;
   align-items: center;
+  min-height: 66px;
 }
 
 .nav-order {
@@ -326,12 +327,10 @@ a {
   width: 160px;
 }
 
-.nav-search,
+/* .nav-search,
 .nav-favorites {
-  display: block;
-  padding: 22px;
-  height: 100%;
-}
+
+} */
 
 .order-btn {
   min-width: 160px;
@@ -360,7 +359,7 @@ a {
 
 .advantages .padding-wrapper {
   padding: 68px;
-  margin-bottom: 21px;
+  margin-bottom: 22px;
 }
 
 .lead-title,
@@ -419,11 +418,6 @@ a {
   margin-bottom: 20px;
 }
 
-.social-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .advantages-list,
 .service-list {
   display: grid;
@@ -431,26 +425,22 @@ a {
 }
 
 .advantages-list {
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-auto-flow: 1fr;
 }
 
 .advantages-item,
-.service-item:not(:nth-child(2)) {
+.service-item:not(:nth-child(2n)) {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
-.advantages-item:not(:first-child, :last-child),
+.advantages-item:not(.fill),
 .side-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: minmax(118px, auto) auto;
   min-height: 385px;
   width: 400px;
   padding: 85px;
-
-  /*  */
-  display: grid;
-  grid-template-rows: minmax(118px, auto) auto;
 }
 
 .fill {
@@ -460,7 +450,6 @@ a {
 
 .fill img {
   width: 800px;
-  /* height: 385px; */
   object-fit: contain;
 }
 
@@ -468,7 +457,7 @@ a {
   flex-direction: row-reverse;
 }
 
-.middle-item {
+.advantages-item:nth-child(odd):not(.fill) {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
@@ -483,8 +472,6 @@ a {
 .advantages-title,
 .service-title {
   text-transform: uppercase;
-  
-  /*  */
   align-self: end;
 }
 
@@ -526,10 +513,7 @@ a {
 .service-item {
   min-height: 385px;
   padding: 77px;
-
-  /*  */
   display: grid;
-  grid-template-rows: auto 63px;
 }
 
 .service-title,
@@ -539,9 +523,6 @@ a {
 
 .service-title {
   margin-bottom: 30px;
-
-  /*  */
-  align-self: start;
 }
 
 .service-title::before {
@@ -689,7 +670,7 @@ a {
   justify-content: center;
 }
 
-.subscribe-form input{
+.subscribe-form input {
   width: 452px;
   padding-left: 20px;
   padding-right: 20px;
@@ -701,13 +682,11 @@ a {
 }
 
 .subscribe-form input:focus {
-  outline: 3px solid #83B3D3; /* опять же, по макету обводка таких полей - снаружи */
-  /* outline-offset: -3px; */
+  outline: 3px solid #83B3D3;
 }
 
 .subscribe-form input:not(:placeholder-shown) {
   outline: 2px solid #000000;
-  /* outline-offset: -2px; */
 }
 
 .contacts {
@@ -717,6 +696,9 @@ a {
 }
 
 .social-list {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 200px;
   max-width: 350px;
 }
 
@@ -742,8 +724,9 @@ a {
 }
 
 .footer-phone {
+  width: 450px;
   margin-left: auto;
-  margin-right: 236px;
+  margin-right: 175px;
 }
 
 .copyright a {
@@ -799,7 +782,7 @@ a {
 }
 
 .breadcrumbs-link:focus-visible {
-  outline: none; /* фокус стилизован также, как состояние покоя. Не понятно, зачем это сделано. Где-то плачет a11y Т_Т */
+  outline: none;
 }
 
 .breadcrumbs-link:active {
@@ -871,6 +854,7 @@ a {
 }
 
 .control {
+  display: flex;
   position: relative;
   padding-left: 36px;
 }
@@ -888,7 +872,6 @@ a {
   opacity: 0.6;
 }
 
-/* как я понимаю, нужно было сделать ЭТО */
 .control:focus-within .control-mark {
   outline: 3px solid #83B3D3;
 }
@@ -1005,11 +988,16 @@ a {
   border: none;
 }
 
-/* по макету стрелок нет */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
+}
+
+input[type="number"] {
+  appearance: none;
+  -moz-appearance: textfield;
 }
 
 .control-field::placeholder {
@@ -1018,7 +1006,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .control-field:not(:placeholder-shown) {
   outline: 2px solid #000000;
-  /* outline-offset: -2px; */ /* по макету обводка снаружи, хотя изнутри было бы аккуратнее и красивее */
 }
 
 .control-field:hover {
@@ -1027,7 +1014,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .control-field:focus-visible {
   outline: 3px solid #83B3D3;
-  /* outline-offset: -3px; */ /* по макету обводка снаружи, хотя изнутри было бы аккуратнее и красивее */
 }
 
 .filter-cost:first-child input {
@@ -1056,12 +1042,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .offers-count {
   margin: 0;
+  margin-right: 20px;
+  max-width: 400px;
 }
 
 .sorting-select {
   width: 292px;
   height: 49px;
-  padding: 10px 14px;
+  padding: 10px 20px;
   padding-right: 40px;
   margin-left: auto;
   margin-right: 70px;
@@ -1074,6 +1062,23 @@ input[type="number"]::-webkit-inner-spin-button {
   border: 2px solid #E5E5E5;
   border-radius: 4px;
   cursor: pointer;
+
+  background-color: #ffffff;
+  background-image: url("../images/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.sorting-select::after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 12px;
+  height: 9px;
 }
 
 .sorting-select:hover,
@@ -1114,9 +1119,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .view-list {
-  width: 160px;
+  min-width: 160px;
+  max-width: 280px;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .view-tile {
@@ -1149,7 +1156,7 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 19px;
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 21px auto 37px; /* переделал т.к. проверку на переполнение вёрстка не проходила */
+  grid-template-rows: 1fr auto auto auto;
   gap: 16px;
 
   border: 1px solid #E6E6E6;
@@ -1160,7 +1167,7 @@ input[type="number"]::-webkit-inner-spin-button {
   display: grid;
 }
 
-.offer a:NOT(.btn-more):focus-visible {
+.offer a:not(.btn-more):focus-visible {
   outline: 2px solid #82B3D3;
 }
 
@@ -1174,15 +1181,24 @@ input[type="number"]::-webkit-inner-spin-button {
 .offer-img {
   margin-bottom: 17px;
   object-fit: contain;
-  height: 212px; /* фиксация высоты изображения т.е. она постоянна */
+  height: 212px;
 }
 
 .offer > p,
 .rating-wrapper {
   margin: 0;
-  display: flex; /* стуктура разметки (абзацы "подзаголовка", "обёртки кнопок", "обёртки рейтинга") не очень подходит для гридов */
+  display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.offer-subtitle span {
+  width: 140px;
+  text-align: left;
+}
+
+.offer-subtitle span:last-child {
+  text-align: right;
 }
 
 .rating-wrapper p {
@@ -1219,16 +1235,14 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .pagination {
   display: flex;
-}
-
-.pagination-item:not(:last-child) {
-  margin-right: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .pagination-link,
 .pagination-empty {
-  width: 60px;
-  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1304,9 +1318,6 @@ input[type="number"]::-webkit-inner-spin-button {
   background-color: #F2F2F2;
   border: none;
   border-radius: 50%;
-  /* background-image: url("../images/close-form.svg");
-  background-repeat: no-repeat;
-  background-position: center; */
   cursor: pointer;
 }
 
@@ -1324,6 +1335,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .modal-close-button::before {
   transform: rotate(45deg);
 }
+
 .modal-close-button::after {
   transform: rotate(-45deg);
 }
@@ -1361,12 +1373,6 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 4px;
 }
 
-/* .field-group {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-} */
-
 .date-error,
 .date-accept {
   font-size: 16px;
@@ -1400,6 +1406,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .search-fields-guests {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 20px;
 }
@@ -1416,10 +1423,6 @@ input[type="number"]::-webkit-inner-spin-button {
   text-transform: capitalize;
 }
 
-.form-label-icon {
-  text-align: left;
-}
-
 .search-fields-date input,
 .search-fields-guests input {
   grid-area: 1/2/2/-1;
@@ -1429,27 +1432,12 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 440px;
   padding: 12px 20px;
   padding-right: 50px;
-  /* position: relative; */
   height: 48px;
-}
-
-.search-fields-date .field-group::after {
-  position: absolute;
-  content: "";
-  right: 22px;
-  top: 16px;
-  width: 17px;
-  height: 15px;
   background-image: url("../images/calendar.svg");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
   opacity: 0.3;
 }
-
-/* .search-fields-date input::-webkit-calendar-picker-indicator {
-  background-image: url("../images/calendar.svg");
-  opacity: 0.3;
-  position: absolute;
-  right: 17px;
-} */
 
 .search-fields-guests input {
   width: 110px;
@@ -1516,7 +1504,6 @@ input[type="number"]::-webkit-inner-spin-button {
   left: 3px;
   background-color: #b1a7a2;
   content: "";
-
 }
 
 .btn-guest-increase::after {
@@ -1531,10 +1518,10 @@ input[type="number"]::-webkit-inner-spin-button {
   right: 10px;
 }
 
-.input-wrapper button:hover:before,
-.input-wrapper button:hover:after,
-.input-wrapper button:focus-visible:before,
-.input-wrapper button:focus-visible:after {
+.input-wrapper button:hover::before,
+.input-wrapper button:hover::after,
+.input-wrapper button:focus-visible::before,
+.input-wrapper button:focus-visible::after {
   background-color: #000000;
 }
 
@@ -1543,8 +1530,8 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: 4px;
 }
 
-.input-wrapper button:active:before,
-.input-wrapper button:active:after {
+.input-wrapper button:active::before,
+.input-wrapper button:active::after {
   background-color: #cccccc;
 }
 
@@ -1552,6 +1539,7 @@ input[type="number"]::-webkit-inner-spin-button {
   position: relative;
   padding-right: 26px;
   margin: auto 0;
+  text-align: left;
 }
 
 .tooltip {
@@ -1603,15 +1591,15 @@ input[type="number"]::-webkit-inner-spin-button {
   outline: none;
 }
 
-.tooltip-text:after {
-  content:'';
+.tooltip-text::after {
+  content: "";
   background-image: url("../images/tooltip-arrow.svg");
   width: 19px;
   height: 9px;
-  position:absolute;
+  position: absolute;
   bottom: 100%;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   margin-left: auto;
   margin-right: auto;
 }
