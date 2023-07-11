@@ -327,11 +327,6 @@ a {
   width: 160px;
 }
 
-/* .nav-search,
-.nav-favorites {
-
-} */
-
 .order-btn {
   min-width: 160px;
 }
@@ -450,6 +445,7 @@ a {
 
 .fill img {
   width: 800px;
+  height: auto;
   object-fit: contain;
 }
 
@@ -534,6 +530,7 @@ a {
 
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: contain;
 }
 
 .service-housing::before {
@@ -996,7 +993,8 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 input[type="number"] {
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   -moz-appearance: textfield;
 }
 
@@ -1069,7 +1067,6 @@ input[type="number"] {
   background-position: right 18px center;
 
   -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 
@@ -1163,8 +1160,10 @@ input[type="number"] {
   border-radius: 4px;
 }
 
-.offer a {
+.offer > a {
   display: grid;
+  grid-template-rows: 212px auto;
+  gap: 17px;
 }
 
 .offer a:not(.btn-more):focus-visible {
@@ -1179,9 +1178,9 @@ input[type="number"] {
 }
 
 .offer-img {
-  margin-bottom: 17px;
   object-fit: contain;
   height: 212px;
+  margin: auto;
 }
 
 .offer > p,
@@ -1436,7 +1435,6 @@ input[type="number"] {
   background-image: url("../images/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 22px center;
-  opacity: 0.3;
 }
 
 .search-fields-guests input {
