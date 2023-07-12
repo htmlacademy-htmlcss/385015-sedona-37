@@ -3,8 +3,9 @@
 
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
+    <title>Седона. Модальное окно</title>
 
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="./styles/styles.css">
   </head>
 
@@ -187,7 +188,7 @@
 
     <div class="modal-container">
       <div class="modal modal-search">
-        <button class="modal-close-button">
+        <button class="modal-close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
         </button>
         <section class="modal-content">
@@ -196,12 +197,12 @@
             <div class="search-fields-date">
               <div class="field-group">
                 <label for="date-check-in">Дата заезда:</label>
-                <input class="search-form-field field" type="date" id="date-check-in" name="date-check-in">
+                <input class="search-form-field field" type="text" id="date-check-in" name="date-check-in" placeholder="27 апреля 2020" required>
                 <span class="date-error">Мы не можем отправить вас в прошлое.</span>
               </div>
               <div class="field-group">
                 <label for="date-check-out">Дата выезда:</label>
-                <input class="search-form-field field" type="date" id="date-check-out" name="date-check-out">
+                <input class="search-form-field field" type="text" id="date-check-out" name="date-check-out" placeholder="1 сентября 2023" required>
                 <span class="date-accept">На эти даты есть свободные номера. Пока есть.</span>
               </div>
             </div>
@@ -211,7 +212,7 @@
                 <div class="input-wrapper">
                   <button class="btn-guest-reduce" type="button"><span class="visually-hidden">Уменьшить</span></button>
                   <input class="search-form-field field adults-input" type="number" id="adults" name="adults"
-                    placeholder="1" value="2">
+                    placeholder="1" value="2" required>
                   <button class="btn-guest-increase" type="button"><span
                       class="visually-hidden">Увеличить</span></button>
                 </div>
