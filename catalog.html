@@ -11,7 +11,7 @@
 
   <body>
     <div class="page-container">
-      <header class="main-header">
+      <header class="main-header" data-test="header">
         <a class="main-header-logo" href="https://htmlacademy.ru/">
           <img src="./images/logo-main.svg" alt="Логотип сайта." width="140" height="70">
         </a>
@@ -48,7 +48,7 @@
         </nav>
       </header>
 
-      <main class="page-main main-inner">
+      <main class="page-main main-inner" data-test="main">
         <div class="wrapper-top">
           <h1 class="main-inner-header">Гостиницы Седоны</h1>
 
@@ -68,7 +68,7 @@
           <section class="catalog-filter">
             <h2 class="visually-hidden">Настройка выборки гостинниц</h2>
 
-            <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+            <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get" data-test="filter">
               <fieldset class="filter-group filter-infrastructure">
                 <legend class="filter-title">Инфраструктура:</legend>
 
@@ -162,7 +162,7 @@
           </section>
         </div>
 
-        <section class="offers padding-wrapper">
+        <section class="offers padding-wrapper" data-test="catalog">
           <header class="offers-header">
             <h2 class="offers-count">Найдено гостиниц: <span>38</span></h2>
 
@@ -309,8 +309,8 @@
 
       </main>
 
-      <footer class="main-footer">
-        <section class="subscribe padding-wrapper">
+      <footer class="main-footer" data-test="footer">
+        <section class="subscribe padding-wrapper" data-test="subscribe">
           <h2 class="subscribe-header">Подпишитесь на рассылку</h2>
           <p class="subscribe-subheader">Только полезная информация и никакого спама, <br> честное бойскаутское!</p>
 
