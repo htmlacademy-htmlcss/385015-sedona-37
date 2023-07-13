@@ -11,7 +11,7 @@
 
   <body>
     <div class="page-container">
-      <header class="main-header">
+      <header class="main-header" data-test="header">
         <a class="main-header-logo" href="https://htmlacademy.ru/">
           <img src="./images/logo-main.svg" alt="Логотип сайта." width="140" height="70">
         </a>
@@ -48,7 +48,7 @@
         </nav>
       </header>
 
-      <main class="page-main main-index">
+      <main class="page-main main-index" data-test="main">
         <section class="intro">
           <h1 class="visually-hidden">Сайт туристического городка Седона</h1>
           <img class="intro-bg" src="./images/bg-hero.jpg" alt="Вид на горную гряду северной Аризоны." width="1200"
@@ -124,8 +124,8 @@
         </section>
       </main>
 
-      <footer class="main-footer">
-        <section class="subscribe subscribe-index padding-wrapper">
+      <footer class="main-footer" data-test="footer">
+        <section class="subscribe subscribe-index padding-wrapper" data-test="subscribe">
           <h2 class="subscribe-header">Подпишитесь на рассылку</h2>
           <p class="subscribe-subheader">Только полезная информация и никакого спама, <br> честное бойскаутское!</p>
 
@@ -186,7 +186,7 @@
       </footer>
     </div>
 
-    <div class="modal-container">
+    <div class="modal-container" data-test="modal">
       <div class="modal modal-search">
         <button class="modal-close-button" type="button">
           <span class="visually-hidden">Закрыть</span>

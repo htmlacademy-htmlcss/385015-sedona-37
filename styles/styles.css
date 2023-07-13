@@ -228,7 +228,7 @@ a {
 
 .main-header-logo {
   margin-right: 30px;
-  margin-bottom: -5px;
+  margin-bottom: -7px;
   z-index: 10;
 }
 
@@ -331,23 +331,23 @@ a {
   min-width: 160px;
 }
 
-.intro {
+.hero {
   display: grid;
 }
 
-.intro-bg {
+.hero-bg {
   width: 1200px;
   height: 485px;
   object-fit: contain;
   background-color: #82B3D3;
 }
 
-.intro-bg,
-.intro-title {
+.hero-bg,
+.hero-title {
   grid-area: 1/1/-1/-1;
 }
 
-.intro-title {
+.hero-title {
   padding-top: 51px;
   justify-self: center;
 }

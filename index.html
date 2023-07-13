@@ -11,7 +11,7 @@
 
   <body>
     <div class="page-container">
-      <header class="main-header">
+      <header class="main-header" data-test="header">
         <a class="main-header-logo" href="https://htmlacademy.ru/">
           <img src="./images/logo-main.svg" alt="Логотип сайта." width="140" height="70">
         </a>
@@ -48,19 +48,19 @@
         </nav>
       </header>
 
-      <main class="page-main main-index">
-        <section class="intro">
+      <main class="page-main main-index" data-test="main">
+        <section class="hero" data-test="hero">
           <h1 class="visually-hidden">Сайт туристического городка Седона</h1>
-          <img class="intro-bg" src="./images/bg-hero.jpg" alt="Вид на горную гряду северной Аризоны." width="1200"
+          <img class="hero-bg" src="./images/bg-hero.jpg" alt="Вид на горную гряду северной Аризоны." width="1200"
             height="485">
-          <img class="intro-title" src="./images/welcome.svg"
+          <img class="hero-title" src="./images/welcome.svg"
             alt="Sedona. Welcome to the gorgeous. Because the Grand Canyon sucks!" width="457" height="213">
         </section>
 
-        <section class="advantages">
+        <section class="advantages" data-test="advantages">
           <h2 class="visually-hidden">Наши преимущества</h2>
           <div class="padding-wrapper">
-            <p class="lead-title">Седона — небольшой городок в Аризоне, <br> заслуживающий большего!</p>
+            <p class="lead-title">Седона — небольшой городок в <br> Аризоне, заслуживающий большего!</p>
             <p class="lead-subtitle">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           </div>
 
@@ -94,7 +94,7 @@
           </ul>
         </section>
 
-        <section class="service">
+        <section class="service" data-test="service">
           <div class="padding-wrapper">
             <h2 class="service-header">Приезжайте в Седону отдохнуть <br> в комфорте и уюте!</h2>
             <p class="service-subheader">Опытный персонал и качественное обслуживание!</p>
@@ -116,7 +116,7 @@
           </ul>
         </section>
 
-        <section class="order">
+        <section class="order" data-test="search">
           <h2 class="order-header">Заинтересовались?</h2>
           <p class="order-subheader">Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие предложения
             гостиниц в Седоне</p>
@@ -124,8 +124,8 @@
         </section>
       </main>
 
-      <footer class="main-footer">
-        <section class="subscribe subscribe-index padding-wrapper">
+      <footer class="main-footer" data-test="footer">
+        <section class="subscribe subscribe-index padding-wrapper" data-test="subscribe">
           <h2 class="subscribe-header">Подпишитесь на рассылку</h2>
           <p class="subscribe-subheader">Только полезная информация и никакого спама, <br> честное бойскаутское!</p>
 
