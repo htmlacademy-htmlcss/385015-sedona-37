@@ -337,16 +337,14 @@ img {
 
 .hero {
   display: grid;
-}
-
-.hero-bg {
-  width: 1200px;
   height: 485px;
-  object-fit: contain;
+  background-image: url("../images/bg-hero.jpg");
   background-color: #82B3D3;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center center;
 }
 
-.hero-bg,
 .hero-title {
   grid-area: 1/1/-1/-1;
 }
